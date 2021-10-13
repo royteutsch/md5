@@ -39,6 +39,12 @@ while FAILURE:
                     elif data[0] == "S":  # Client was successful, stop all the processes
                         print("Decryption successful, number is: " + data[1:])
                         FAILURE = False
+                    elif data[0] == "c":  # User client asked for the current number
+                        current_socket.send(("Current Number is: " + str(START_NUMBER)).encode())
+                    elif data[0] == "n":  # User Client asked for the number of clients
+                        current_socket.send(("Current Number of clients is: " + str(len(client_sockets))).encode())
+                    elif data[0] == "h":  # User Client asked for the hash we're trying to crack
+                        current_socket.send(("The Hash we're trying to decrypt is: " + GOAL).encode())
         print("Current Number: " + str(START_NUMBER).zfill(10))
     if not FAILURE:
         for current_socket in rlist:

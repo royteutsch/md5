@@ -10,7 +10,7 @@ my_socket.connect(('127.0.0.1', 1729))
 x = True
 
 
-def parse_data(inputted_data, stopper):
+def parse_data(inputted_data):
     if inputted_data[0] == "L":  # Server sent the start number and number of processes to be made for each core
         parameters = inputted_data[1:].split()
         start_number = parameters[0]
@@ -34,4 +34,4 @@ def decrypt(starting_num, num_guesses, goal):
 while x:
     my_socket.send(("C" + str(multiprocessing.cpu_count())).encode())  # Sends the number of cpu cores
     data = my_socket.recv(1024).decode()
-    parse_data(data, x)
+    parse_data(data)

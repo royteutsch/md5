@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4acc0e3e-d459-44e5-866d-a409d4c6d7d6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/md5_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/md5_client.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/md5_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/md5_server.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/md5_user.py" beforeDir="false" afterPath="$PROJECT_DIR$/md5_user.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

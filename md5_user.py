@@ -29,11 +29,11 @@ class Graphical_client:
         print("updating")
         my_socket.send("cd".encode())
         data = my_socket.recv(1024).decode()
-        data.strip('][').split(', ')
         print(data)
-        for cliente in data:
-            for thing in cliente:
-                thing = str(thing)
+        data = data[2:-2]
+        data = data.split('], [')
+        data = list(map(lambda x: x.split(", "), data))
+        print(data)
         self.lst = data
         self.total_rows = len(self.lst)
         self.total_columns = len(self.lst[0])
@@ -45,7 +45,7 @@ class Graphical_client:
         # code for creating table
         for i in range(self.total_rows):
             for j in range(self.total_columns):
-                self.e = Entry(self.root, width=100, fg='black',
+                self.e = Entry(self.root, width=20, fg='black',
                                font=('Arial', 12, 'bold'))
                 self.e.grid(row=i, column=j, sticky=NSEW)
                 self.e.insert(END, self.lst[i][j])
